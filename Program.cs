@@ -2,6 +2,23 @@
 // функции и константы
 //
 
+// заполнение рандомными данными (в диапозоне 0-10000)
+void fillArrayRandom(int[] mas, int size)
+{
+  for(int i = 0; i < size; i++)
+  {
+    mas[i] = new Random().Next(0,10000);
+  }
+}
+// заполнение массива вручную
+void fillArrayManual(int[] mas, int size)
+{
+  for(int i = 0; i < size; i++)
+  {
+    Console.Write($"[{i}] ");
+    mas[i] = int.Parse(Console.ReadLine());
+  }
+}
 // вывод массива
 void printArray(int[] mas, int size)
 {
@@ -63,12 +80,9 @@ int[] mas = new int[MAX_SIZE];
 
 Console.Write($"Введите длину массива (макс. {MAX_SIZE}): ");
 int size = int.Parse(Console.ReadLine());
-
-// заполнение рандомными данными (в диапозоне 0-9999)
-for(int i = 0; i < size; i++)
-{
-  mas[i] = new Random().Next(0,10000);
-}
+Console.Write("Заполнить массив случайными данными? (y/n) ");
+if(char.Parse(Console.ReadLine()) == 'y') fillArrayRandom(mas, size);
+else fillArrayManual(mas, size);
 
 // меню выбора, цикл разрывается на команде return
 while(true)
