@@ -102,14 +102,6 @@ while(true)
           Console.ReadLine();
           break;
         }
-        if(index == size - 1)
-        {
-          mas[index] = 0;
-          size--;
-          Console.WriteLine($"Элемент {index} был удален из конца массива. Размер массива уменьшен на 1.\nНажмите Enter для возврата в меню");
-          Console.ReadLine();
-          break;
-        }
         removeItem(mas, size, index);
         size--;
         Console.WriteLine($"Элемент {index} был удален из массива. Размер массива уменьшен на 1.\nНажмите Enter для возврата в меню");
@@ -137,14 +129,6 @@ while(true)
         int value = int.Parse(Console.ReadLine());
         Console.Write($"Введите индекс, куда записать это число (0 - {size - 1}): ");
         int i = int.Parse(Console.ReadLine());
-        if(i == size)
-        {
-          size++;
-          mas[i] = value;
-          Console.WriteLine("Элемент добавлен в конец массива.\nНажмите Enter для возврата в меню");
-          Console.ReadLine();
-          break;
-        }
         if(i > size)
         {
           Console.WriteLine("Индекс не существует.\nНажмите Enter для возврата в меню");
